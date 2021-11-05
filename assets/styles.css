@@ -14,6 +14,7 @@ header p {
 }
 main {
     padding-top: 1%;
+    padding-bottom: 5%;
 }
 main section{
     width: 50%;
@@ -67,6 +68,6 @@ a {
     font-weight: 100;
 }
 .accordion-button:not(.collapsed) {
-    background-color: #50b5a0;
-    color: antiquewhite;
+    background-color: #a5f1e2;
+    color: rgb(44, 42, 40);
 }
