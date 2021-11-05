@@ -17,7 +17,6 @@ main {
 }
 main section{
     width: 50%;
-    height: 75vh;
 }
 section .region-picker {
     padding-left: 10px;
@@ -31,12 +30,20 @@ section .region-picker label {
 section .region-picker option {
     margin: 3px 5px 0;
 }
+
+section div.get_result {
+    margin-top: 20px;
+    padding: 15px 10px;
+    background-color:oldlace;
+}
+section div.get_result>p {
+    font-weight: 100;
+    font-size: 0.9em;
+}
 footer {
     background-color: #50b5a0;
-    position: fixed;
     width: 100%;
-    padding-top: 0.5%;
-    bottom: 0;
+    padding: 5px 2vh 0;
     color: blanchedalmond;
 }
 
@@ -45,4 +52,21 @@ a {
     color:darkslategrey;
     font-weight: 300;
     font-family: 'Courier New', Courier, monospace;
+}
+.accordion {
+    font-size: 0.9em;
+}
+.accordion-item {
+    background-color: inherit;
+}
+.accordion-body {
+    background-color: rgb(233, 233, 229);
+    color: #50b5a0;
+}
+.accordion-header>button {
+    font-weight: 100;
+}
+.accordion-button:not(.collapsed) {
+    background-color: #50b5a0;
+    color: antiquewhite;
 }
