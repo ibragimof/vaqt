@@ -2,7 +2,7 @@ $(document).ready(function () {
     var divisionOptions = '';
     var districtOptions = '';
     var supdistrictOptions = '';
-    $.getJSON('Bangladesh/Division.json', function (data) {
+    $.getJSON('Ozbekiston/Division.json', function (data) {
         divisionOptions += '<option value="">Select Division</option>';
         $.each(data, function (key, division) {
             divisionOptions += '<option value="' + division.id + '">' + division.name + '</option>';
@@ -12,7 +12,7 @@ $(document).ready(function () {
     $(document).on('change', '#division', function () {
         var division_id = $(this).val();
         if (division_id != '') {
-            $.getJSON('Bangladesh/District.json', function (data) {
+            $.getJSON('Ozbekiston/District.json', function (data) {
                 districtOptions = '<option value="">Select District</option>';
                 $.each(data, function (key, district) {
                     if (division_id == district.division_id) {
@@ -29,7 +29,7 @@ $(document).ready(function () {
     $(document).on('change', '#district', function () {
         var district_id = $(this).val();
         if (district_id != '') {
-            $.getJSON('Bangladesh/Subdistrict.json', function (data) {
+            $.getJSON('Ozbekiston/Subdistrict.json', function (data) {
                 supdistrictOptions = '<option value="">Select Sub-District</option>';
                 $.each(data, function (key, subdistrict) {
                     if (district_id == subdistrict.district_id) {
