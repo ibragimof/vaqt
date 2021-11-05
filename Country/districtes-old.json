@@ -1,0 +1,191 @@
+[
+    {
+        "id":"1",
+        "name":"Andijon viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"2",
+        "name":"Buxoro viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"3",
+        "name":"Jizzax viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"4",
+        "name":"Qashqadaryo viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"5",
+        "name":"Navoiy viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"6",
+        "name":"Namangan viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"7",
+        "name":"Namangan viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"8",
+        "name":"Samarqand viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"9",
+        "name":"Surxondaryo viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"10",
+        "name":"Sirdaryo viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"11",
+        "name":"Toshkent viloyati / Shahri",
+        "Country_id":"1"
+    },
+    {
+        "id":"12",
+        "name":"Xorazm viloyati",
+        "Country_id":"1"
+    },
+    {
+        "id":"13",
+        "name":"Qoraqalpog‘iston Respublikasi",
+        "Country_id":"1"
+    },
+
+
+    {
+        "id":"7",
+        "name":"Chittagong",
+        "Country_id":"2"
+    },
+    {
+        "id":"8",
+        "name":"Comilla",
+        "Country_id":"2"
+    },
+    {
+        "id":"9",
+        "name":"Chandpur",
+        "Country_id":"2"
+    },
+    {
+        "id":"10",
+        "name":"Lakshmipur",
+        "Country_id":"2"
+    },
+    {
+        "id":"11",
+        "name":"Noakhali",
+        "Country_id":"2"
+    },
+    {
+        "id":"12",
+        "name":"Feni",
+        "Country_id":"2"
+    },
+    {
+        "id":"13",
+        "name":"Khagrachhari",
+        "Country_id":"2"
+    },
+    {
+        "id":"14",
+        "name":"Rangamati",
+        "Country_id":"2"
+    },
+    {
+        "id":"15",
+        "name":"Bandarban",
+        "Country_id":"2"
+    },
+    {
+        "id":"16",
+        "name":"Brahmanbaria",
+        "Country_id":"2"
+    },
+    {
+        "id":"17",
+        "name":"Cox's Bazar",
+        "Country_id":"2"
+    },
+
+
+    {
+        "id":"18",
+        "name":"Dhaka",
+        "Country_id":"3"
+    },
+    {
+        "id":"19",
+        "name":"Ghazipur",
+        "Country_id":"3"
+    },
+    {
+        "id":"20",
+        "name":"Kishoreganj",
+        "Country_id":"3"
+    },
+    {
+        "id":"21",
+        "name":"Manikganj",
+        "Country_id":"3"
+    },
+    {
+        "id":"22",
+        "name":"Munshiganj",
+        "Country_id":"3"
+    },
+    {
+        "id":"23",
+        "name":"Narayanganj",
+        "Country_id":"3"
+    },
+    {
+        "id":"24",
+        "name":"Narsingdi",
+        "Country_id":"3"
+    },
+    {
+        "id":"25",
+        "name":"Tangail",
+        "Country_id":"3"
+    },
+    {
+        "id":"26",
+        "name":"Faridpur",
+        "Country_id":"3"
+    },
+    {
+        "id":"27",
+        "name":"Gopalganj",
+        "Country_id":"3"
+    },
+    {
+        "id":"28",
+        "name":"Madaripur",
+        "Country_id":"3"
+    },
+    {
+        "id":"29",
+        "name":"Rajbari",
+        "Country_id":"3"
+    },
+    {
+        "id":"30",
+        "name":"Shariatpur",
+        "Country_id":"3"
+    }
+]
