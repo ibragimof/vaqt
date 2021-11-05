@@ -1,21 +1,21 @@
 $(document).ready(function () {
-    var divisionOptions = '';
+    var CountryOptions = '';
     var districtOptions = '';
     var supdistrictOptions = '';
-    $.getJSON('Country/Division.json', function (data) {
-        divisionOptions += '<option value="">Davlat nomi</option>';
-        $.each(data, function (key, division) {
-            divisionOptions += '<option value="' + division.id + '">' + division.name + '</option>';
+    $.getJSON('Country/Country.json', function (data) {
+        CountryOptions += '<option value="">Davlat nomi</option>';
+        $.each(data, function (key, Country) {
+            CountryOptions += '<option value="' + Country.id + '">' + Country.name + '</option>';
         });
-        $('#division').html(divisionOptions);
+        $('#Country').html(CountryOptions);
     });
-    $(document).on('change', '#division', function () {
-        var division_id = $(this).val();
-        if (division_id != '') {
+    $(document).on('change', '#Country', function () {
+        var Country_id = $(this).val();
+        if (Country_id != '') {
             $.getJSON('Country/District.json', function (data) {
                 districtOptions = '<option value="">Mintaqa(viloyat)ni tanlang</option>';
                 $.each(data, function (key, district) {
-                    if (division_id == district.division_id) {
+                    if (Country_id == district.Country_id) {
                         districtOptions += '<option value="' + district.id + '">' + district.name + '</option>';
                     }
                 });

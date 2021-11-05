@@ -19,7 +19,18 @@ main section{
     width: 50%;
     height: 75vh;
 }
-
+section .region-picker {
+    padding-left: 10px;
+}
+section .region-picker label {
+    font-weight: 200;
+    color: darkslategrey;
+    font-size: 0.9em;
+    margin: 10px 10px 0;
+}
+section .region-picker option {
+    margin: 3px 5px 0;
+}
 footer {
     background-color: #50b5a0;
     position: fixed;
