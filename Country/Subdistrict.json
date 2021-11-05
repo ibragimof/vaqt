@@ -114,4 +114,72 @@
         "district_id":"3"
     }
 
+
+
+
+    {
+        "id":"1901",
+        "name":"Angor tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1902",
+        "name":"Boysun tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Denov tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Jarqoʻrgʻon tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Qumqoʻrgʻon tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Muzrabot tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Oltinsoy tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Sariosiyo tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Sherobod tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Shoʻrchi tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Termiz tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Uzun tumani",
+        "district_id":"9"
+    },
+    {
+        "id":"1910",
+        "name":"Bandixon tumani",
+        "district_id":"9"
+    }
 ]
