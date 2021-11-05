@@ -1,75 +1,75 @@
 [
     {
         "id":"1",
-        "name":"Agailjhara Upazila",
+        "name":"Andijon (tuman)",
         "district_id":"1"
     },
     {
         "id":"2",
-        "name":"Babuganj Upazila",
+        "name":"Asaka tumani",
         "district_id":"1"
     },
     {
         "id":"3",
-        "name":"Bakerganj Upazila",
+        "name":"Baliqchi tumani",
         "district_id":"1"
     },
     {
         "id":"4",
-        "name":"Banaripara Upazila",
+        "name":"Boʻston (tuman)",
         "district_id":"1"
     },
     {
         "id":"5",
-        "name":"Barisal Sadar Upazila",
+        "name":"Buloqboshi tumani",
         "district_id":"1"
     },
     {
         "id":"6",
-        "name":"Gournadi Upazila",
+        "name":"Izboskan (tuman)",
         "district_id":"1"
     },
     {
         "id":"7",
-        "name":"Hizla Upazila",
+        "name":"Xoʻjaobod tumani",
         "district_id":"1"
     },
     {
         "id":"8",
-        "name":"Mehendiganj Upazila",
+        "name":"Qoʻrgʻontepa tumani",
         "district_id":"1"
     },
     {
         "id":"9",
-        "name":"Muladi Upazila",
+        "name":"Marhamat tumani",
         "district_id":"1"
     },
     {
         "id":"10",
-        "name":"Wazirpur Upazila",
+        "name":"Oltinkoʻl (tuman)",
         "district_id":"1"
     },
 
 
     {
         "id":"11",
-        "name":"Amtali Upazila",
-        "district_id":"2"
+        "name":"Paxtaobod tumani",
+        "district_id":"1"
     },
     {
         "id":"12",
-        "name":"Bamna Upazila",
-        "district_id":"2"
+        "name":"Shahrixon (tuman)",
+        "district_id":"1"
     },
     {
         "id":"13",
-        "name":"Barguna Sadar Upazila",
-        "district_id":"2"
+        "name":"Ulugʻnor (tuman)",
+        "district_id":"1"
     },
     {
         "id":"14",
-        "name":"Betagi Upazila",
-        "district_id":"2"
+        "name":"Jalaquduq (tuman)",
+        "district_id":"1"
     },
     {
         "id":"15",
