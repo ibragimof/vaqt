@@ -30,8 +30,8 @@ footer {
 }
 
 a {
-    text-decoration: none;
-    color: bisque;
+    
+    color:darkslategrey;
     font-weight: 300;
     font-family: 'Courier New', Courier, monospace;
 }
