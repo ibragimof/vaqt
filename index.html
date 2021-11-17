@@ -34,7 +34,7 @@
   </head>
   <body>
     <header>
-      <h3 class="text-center">Namoz vaqtlari</h3>
+      <h3 class="text-center">Позиции солнца</h3>
       <p class="text-center">
         (Вы участвуете в программе раннего доступа к сырому продукту.
         Учитывайте, что продукт на даном этапе может предоставить недостаточно
@@ -47,68 +47,66 @@
 
         <div class="set_address">
           <div class="region-picker">
-            <label for="">Mamlakatni tanlang:</label>
+            <label for="">Выберите страну:</label>
             <select
               type="text"
               name="Country"
               id="Country"
               class="form-control"
             >
-              <option value="">Davlat nomi</option>
+              <option value="">Не выбрано</option>
             </select>
           </div>
           <div class="region-picker">
-            <label for="">Mintaqani tanlang:</label>
+            <label for="">Выберите область</label>
             <select
               type="text"
               name="district"
               id="district"
               class="form-control"
             >
-              <option value="">--Davlat tanlanmagan--</option>
+              <option value="">--Страна не выбрано--</option>
             </select>
           </div>
           <div class="region-picker">
-            <label for="">Tuman /shaharni tanlang:</label>
+            <label for="">Город или Район:</label>
             <select
               type="text"
               name="subdistrict"
               id="subdistrict"
               class="form-control"
             >
-              <option value="">--Mintaqa tanlanmagan--</option>
+              <option value="">--Область не выбрана--</option>
             </select>
           </div>
         </div>
         <div class="get_result">
-          <h6 class="text-center">Tanlangan joy uchun vaqt ko'rsatgichlari:</h6>
+          <h6 class="text-center">Калькуляции выбранного местоположения:</h6>
           <p class="text-center">
-            (&laquo;<code id="geoLocationLat">37.717835865297644</code> daraja
-            shimoliy kenglik,
-            <code id="geoLocationLong">67.60712147320088</code> daraja sharqiy
-            uzunlik&raquo <code id="resultDate"></code> sanasi uchun.)
+            (&laquo;<code id="geoLocationLat">37.717835865297644</code> северная широта,
+            <code id="geoLocationLong">67.60712147320088</code> восточная долгота&raquo. Дата <code id="resultDate"></code>.)
           </p>
 
           <table class="table table-striped table-hover table-borderless">
             <tbody>
               <tr>
-                <td>Bomdod:</td>
+                <td>Рассвет:</td>
                 <td id="fajrTime"></td>
               </tr>
               <tr>
-                <td>Qoq tush (qiyom):</td>
+                <td>Зенит:</td>
                 <td id="dohrTime">Time</td>
               </tr>
               <tr>
                 <td>Asr:</td>
-                <td id="asrTime">Not calculated yet</td>
+                <td id="asrTime">Тень</td>
               </tr>
               <tr>
-                <td>Shom:</td>
+                <td>Закат:</td>
                 <td id="maghribTime">Time</td>
               </tr>
               <tr>
-                <td>Xufton:</td>
+                <td>Ночь:</td>
                 <td id="ishaTime">Time</td>
               </tr>
             </tbody>
@@ -124,7 +122,7 @@
                   data-bs-target="#collapseOne"
                   aria-controls="collapseOne"
                 >
-                  Qo'shimcha ma'lumotlar:
+                  допольнительно:
                 </button>
               </h2>
               <div
@@ -207,13 +205,16 @@
             }
           ).addTo(mymap);
 
-          var popup = L.popup();
+         
 
           function onMapClick(e) {
            
         
            L.marker(e.latlng).addTo(mymap).bindPopup("<b>Местоположение выбрано</b><br>" +  e.latlng.toString().slice(6)).openPopup();
+           return e.latlng;
           }
+          cordinateLat = e.latlng;
+          console.log(cordinateLat);
           mymap.on("click", onMapClick);
           var popup = L.popup().openOn(map);
         </script>
