@@ -83,8 +83,10 @@
         <div class="get_result">
           <h6 class="text-center">Калькуляции выбранного местоположения:</h6>
           <p class="text-center">
-            (&laquo;<code id="geoLocationLat">37.717835865297644</code> северная широта,
-            <code id="geoLocationLong">67.60712147320088</code> восточная долгота&raquo. Дата <code id="resultDate"></code>.)
+            (&laquo;<code id="geoLocationLat">37.717835865297644</code> северная
+            широта,
+            <code id="geoLocationLong">67.60712147320088</code> восточная
+            долгота&raquo. Дата <code id="resultDate"></code>.)
           </p>
 
           <table class="table table-striped table-hover table-borderless">
@@ -186,37 +188,25 @@
         Map window
         <div id="map"></div>
         <script>
-          var mymap = L.map("map").setView(
-            [37.717835865297644, 67.60712147320088],
-            13
-          );
+                    var mymap = L.map("map").setView(
+                      [37.717835865297644, 67.60712147320088],
+                      13
+                    );
 
-          L.tileLayer(
-            "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
-            {
-              maxZoom: 18,
-              attribution:
-                'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-              id: "mapbox/streets-v11",
-              tileSize: 512,
-              zoomOffset: -1,
-              style: "mapbox://styles/mapbox/satellite-v9",
-            }
-          ).addTo(mymap);
+                    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                      }).addTo(mymap);
 
-         
-
-          function onMapClick(e) {
-           
-        
-           L.marker(e.latlng).addTo(mymap).bindPopup("<b>Местоположение выбрано</b><br>" +  e.latlng.toString().slice(6)).openPopup();
-           return e.latlng;
-          }
-          cordinateLat = e.latlng;
-          console.log(cordinateLat);
-          mymap.on("click", onMapClick);
-          var popup = L.popup().openOn(map);
+                    function onMapClick(e) {
+                      L.marker(e.latlng)
+                        .addTo(mymap)
+                        .bindPopup(
+                          "<b>Местоположение выбрано</b><br>" +
+                            e.latlng.toString().slice(6)
+                        )
+                        .openPopup();
+                    }
+                    mymap.on("click", onMapClick);
+                    var popup = L.popup().openOn(map);
         </script>
       </section>
     </main>
