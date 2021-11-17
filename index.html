@@ -214,12 +214,8 @@
         
            L.marker(e.latlng).addTo(mymap).bindPopup("<b>Местоположение выбрано</b><br>" +  e.latlng.toString().slice(6)).openPopup();
           }
-
           mymap.on("click", onMapClick);
-          var popup = L.popup()
-            .setLatLng(latlng)
-            .setContent("<p>Hello world!<br />This is a nice popup.</p>")
-            .openOn(map);
+          var popup = L.popup().openOn(map);
         </script>
       </section>
     </main>
