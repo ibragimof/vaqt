@@ -71,3 +71,7 @@ a {
     background-color: #a5f1e2;
     color: rgb(44, 42, 40);
 }
+#map {
+    height: 100%;
+    width: 100%;
+}
