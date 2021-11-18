@@ -187,26 +187,8 @@
       <section class="right">
         Map window
         <div id="map"></div>
-        <script>
-                    var mymap = L.map("map").setView(
-                      [37.717835865297644, 67.60712147320088],
-                      13
-                    );
-
-                    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                      }).addTo(mymap);
-
-                    function onMapClick(e) {
-                      L.marker(e.latlng)
-                        .addTo(mymap)
-                        .bindPopup(
-                          "<b>Местоположение выбрано</b><br>" +
-                            e.latlng.toString().slice(6)
-                        )
-                        .openPopup();
-                    }
-                    mymap.on("click", onMapClick);
-                    var popup = L.popup().openOn(map);
+        <script src="/assets/leaflet.js">
+                    
         </script>
       </section>
     </main>
