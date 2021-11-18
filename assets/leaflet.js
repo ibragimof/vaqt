@@ -16,7 +16,7 @@ var mymap = L.map("map").setView(
   function clickEvent(e) {
 
     if (typeof(newMarker)==='undefined'){
-        newMarker = new L.marker(e.latlng, { draggable: true });
+        newMarker = new L.marker(e.latlng);
         newMarker.addTo(mymap).bindPopup(
           "<b>Выбрано местоположение</b><br>" +
                   e.latlng.toString().slice(6)
@@ -31,13 +31,12 @@ var mymap = L.map("map").setView(
 
     lat = e.latlng.lat;
     lng = e.latlng.lng;
-    console.log(lat + " Inside");
     now();
 }
 
 mymap.on('click', clickEvent);
-console.log(lat + " Global");
 
 function now(){
-console.log(lat + " Global after click");
+console.log(" New latitude: " + lat);
+console.log(" New longitude: " + lng + "\n\n\n");
 }
