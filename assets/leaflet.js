@@ -14,7 +14,7 @@ var mymap = L.map("map").setView(
     L.marker(e.latlng)
       .addTo(mymap)
       .bindPopup(
-        "<b>Времена по месту</b><br>" +
+        "<b>Выбрано новое место на карте</b><br>" +
           e.latlng.toString().slice(6)
       )
       .openPopup();
