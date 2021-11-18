@@ -36,3 +36,6 @@ document.getElementById("sunriseRestricted").innerHTML = vaqt.sunrise.getHours()
 document.getElementById("sunsetRestricted").innerHTML = vaqt.sunsetStart.getHours() + ':' + vaqt.sunsetStart.getMinutes() + "—" + vaqt.sunset.getHours() + ':' + vaqt.sunset.getMinutes();
 
 document.getElementById("resultDate").innerHTML = new Date().toLocaleDateString();
+
+var longitude = document.getElementById(geoLocationLat);
+console.log(longitude);

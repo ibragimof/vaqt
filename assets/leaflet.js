@@ -1,6 +1,6 @@
 var mymap = L.map("map").setView(
     [39.65, 66.95],
-    9 
+    7 
   );
 
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -37,6 +37,7 @@ var mymap = L.map("map").setView(
 mymap.on('click', clickEvent);
 
 function now(){
-console.log(" New latitude: " + lat);
-console.log(" New longitude: " + lng + "\n\n\n");
+//call lat and long inside function only:
+document.getElementById("geoLocationLat").innerHTML = lat;
+document.getElementById("geoLocationLong").innerHTML = lng;
 }
