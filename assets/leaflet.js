@@ -2,16 +2,15 @@ var mymap = L.map("map").setView(
     [39.65, 66.95],
     7 
   );
-
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: 'Картография &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
     minZoom: 6,
     maxZoom: 14,
     }).addTo(mymap);
-
-  //initilaize new cordinates
-  var lat;
-  var lng;
+  //initialize new map location:
+  mymap.locate({setView: true, maxZoom: 16});
+  //initilaize new users cordinates:
+  var userCoordinates = new Object();
   // marker icon
   function clickEvent(e) {
 
@@ -27,17 +26,14 @@ var mymap = L.map("map").setView(
               e.latlng.toString().slice(6)
           )
           .openPopup();}
-
-
-    lat = e.latlng.lat;
-    lng = e.latlng.lng;
+    userCoordinates = e.latlng;
     now();
 }
 
 mymap.on('click', clickEvent);
 
 function now(){
-//call lat and long inside function only:
-document.getElementById("geoLocationLat").innerHTML = lat;
-document.getElementById("geoLocationLong").innerHTML = lng;
+// write in document user's coordinates:
+document.getElementById("geoLocationLat").innerHTML = userCoordinates.lat;
+document.getElementById("geoLocationLong").innerHTML = userCoordinates.lng;
 }

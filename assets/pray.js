@@ -3,7 +3,7 @@
 // add home (test purposes only)
 SunCalc.addTime(-15, "fajrTime", "ishaTime");
 SunCalc.addTime(-16, "subhEnd");
-var vaqt = SunCalc.getTimes(new Date(), 37.717835865297644, 67.60712147320088);
+var vaqt = SunCalc.getTimes(new Date(), userCoordinates.lat.toString(), userCoordinates.lng.toString());
 console.log(vaqt);
 // add asr time method:
 
