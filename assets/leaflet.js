@@ -1,4 +1,4 @@
-var mymap = L.map("map").setView([39.65, 66.95], 14);
+let mymap = L.map("map").setView([39.65, 66.95], 14);
 L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
   attribution:
     'Imagery &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
@@ -8,11 +8,11 @@ L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
 //initialize new map location:
 mymap.locate({ setView: true });
 //initilaize new users cordinates:
-var userCoordinates = new Object();
+let userCoordinates = new Object();
 
 // to detect location:
 function onLocationFound(e) {
-  var radius = e.accuracy;
+  let radius = e.accuracy;
 
   L.marker(e.latlng)
     .addTo(mymap)
@@ -30,10 +30,12 @@ function onLocationFound(e) {
 mymap.on("locationfound", onLocationFound);
 // To log error:
 function onLocationError(e) {
-  alert(`Ошибка. Мы не смогли определить ваше местоположение. Вы можете указать нужное место вручную на карте.\r\n\n ${e.message}`);
+  alert(
+    `Ошибка. Мы не смогли определить ваше местоположение. Вы можете указать нужное место вручную на карте.\r\n\n ${e.message}`
+  );
 }
 
-mymap.on('locationerror', onLocationError);
+mymap.on("locationerror", onLocationError);
 // marker icon
 function clickEvent(e) {
   if (typeof newMarker === "undefined") {
@@ -58,3 +60,4 @@ function clickEvent(e) {
 
 mymap.on("click", clickEvent);
 
+// in another file, all parameters should be used inside of globalScope() function!!!
