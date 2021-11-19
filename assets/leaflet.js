@@ -31,7 +31,7 @@ function onLocationError(e) {
   alert(e.message);
 }
 
-map.on('locationerror', onLocationError);
+mymap.on('locationerror', onLocationError);
 // marker icon
 function clickEvent(e) {
   if (typeof newMarker === "undefined") {
