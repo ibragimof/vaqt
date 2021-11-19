@@ -1,6 +1,6 @@
 var mymap = L.map("map").setView(
     [39.65, 66.95],
-    7 
+    14 
   );
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: 'Картография &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
