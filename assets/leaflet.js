@@ -16,13 +16,13 @@ var mymap = L.map("map").setView(
   function onLocationFound(e) {
     var radius = e.accuracy;
 
-    L.marker(e.latlng).addTo(map)
+    L.marker(e.latlng).addTo(mymap)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
-    L.circle(e.latlng, radius).addTo(map);
+    L.circle(e.latlng, radius).addTo(mymap);
 }
 
-map.on('locationfound', onLocationFound);
+mymap.on('locationfound', onLocationFound);
   // marker icon
   function clickEvent(e) {
 
