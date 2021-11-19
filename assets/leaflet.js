@@ -17,7 +17,7 @@ var mymap = L.map("map").setView(
     var radius = e.accuracy;
 
     L.marker(e.latlng).addTo(mymap)
-        .bindPopup("Вы в радиусе " + radius + " метрах").openPopup();
+        .bindPopup("<b>Ваше местоположение</b><br>В радиусе &asymp;" + radius + " метрах от точки.").openPopup();
 
     L.circle(e.latlng, radius).addTo(mymap);
 }
