@@ -1,7 +1,7 @@
 var mymap = L.map("map").setView([39.65, 66.95], 14);
 L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
   attribution:
-    'Картография &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
+    'Imagery &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
   minZoom: 6,
   maxZoom: 16,
 }).addTo(mymap);
@@ -25,7 +25,7 @@ function onLocationFound(e) {
 
   L.circle(e.latlng, radius).addTo(mymap);
   userCoordinates = e.latlng;
-  now();
+  globalScope();
 }
 mymap.on("locationfound", onLocationFound);
 // To log error:
@@ -53,13 +53,8 @@ function clickEvent(e) {
       .openPopup();
   }
   userCoordinates = e.latlng;
-  now();
+  globalScope();
 }
 
 mymap.on("click", clickEvent);
 
-function now() {
-  // write in document user's coordinates:
-  document.getElementById("geoLocationLat").innerHTML = userCoordinates.lat;
-  document.getElementById("geoLocationLong").innerHTML = userCoordinates.lng;
-}
