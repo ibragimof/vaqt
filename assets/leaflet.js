@@ -24,6 +24,8 @@ function onLocationFound(e) {
     .openPopup();
 
   L.circle(e.latlng, radius).addTo(mymap);
+  userCoordinates = e.latlng;
+  now();
 }
 mymap.on("locationfound", onLocationFound);
 // To log error:
