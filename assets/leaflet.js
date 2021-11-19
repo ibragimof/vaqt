@@ -28,7 +28,7 @@ function onLocationFound(e) {
 mymap.on("locationfound", onLocationFound);
 // To log error:
 function onLocationError(e) {
-  alert(e.message);
+  alert('Ошибка. Мы не смогли определить ваше местоположение. Код ошибки:' + e.message + '<br>Вы можете указать нужное место вручную на карте.');
 }
 
 mymap.on('locationerror', onLocationError);
