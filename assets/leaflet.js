@@ -17,9 +17,9 @@ function onLocationFound(e) {
   L.marker(e.latlng)
     .addTo(mymap)
     .bindPopup(
-      "<b>Вы сейчас находитесь</b><br>в радиусе &asymp;" +
+      "<b>Ваше текущее местоположение</b><br>(с точностью до &asymp;" +
         Math.floor(radius) +
-        " метрах от  указанной точки."
+        " метров от  указанной точки)"
     )
     .openPopup();
 
