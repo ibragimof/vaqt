@@ -1,51 +1,63 @@
-var mymap = L.map("map").setView(
-    [39.65, 66.95],
-    14 
-  );
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: 'Картография &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
-    minZoom: 6,
-    maxZoom: 16,
-    }).addTo(mymap);
-  //initialize new map location:
-  mymap.locate({setView: true});
-  //initilaize new users cordinates:
-  var userCoordinates = new Object();
+var mymap = L.map("map").setView([39.65, 66.95], 14);
+L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+  attribution:
+    'Картография &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
+  minZoom: 6,
+  maxZoom: 16,
+}).addTo(mymap);
+//initialize new map location:
+mymap.locate({ setView: true });
+//initilaize new users cordinates:
+var userCoordinates = new Object();
 
-  // to detect location:
-  function onLocationFound(e) {
-    var radius = e.accuracy;
+// to detect location:
+function onLocationFound(e) {
+  var radius = e.accuracy;
 
-    L.marker(e.latlng).addTo(mymap)
-        .bindPopup("<b>Ваше местоположение</b><br>В радиусе &asymp;" + radius + " метрах от точки.").openPopup();
+  L.marker(e.latlng)
+    .addTo(mymap)
+    .bindPopup(
+      "<b>Вы находитесь</b><br>в радиусе &asymp;" +
+        radius +
+        " метрах от  указанной точки."
+    )
+    .openPopup();
 
-    L.circle(e.latlng, radius).addTo(mymap);
+  L.circle(e.latlng, radius).addTo(mymap);
+}
+mymap.on("locationfound", onLocationFound);
+// To log error:
+function onLocationError(e) {
+  alert(e.message);
 }
 
-mymap.on('locationfound', onLocationFound);
-  // marker icon
-  function clickEvent(e) {
-
-    if (typeof(newMarker)==='undefined'){
-        newMarker = new L.marker(e.latlng);
-        newMarker.addTo(mymap).bindPopup(
-          "<b>Выбрано местоположение</b><br>" +
-                  e.latlng.toString().slice(6)
-              )
-              .openPopup();;}
-    else { newMarker.setLatLng(e.latlng).bindPopup(
-            "<b>Выбрано местоположение</b><br>" +
-              e.latlng.toString().slice(6)
-          )
-          .openPopup();}
-    userCoordinates = e.latlng;
-    now();
+map.on('locationerror', onLocationError);
+// marker icon
+function clickEvent(e) {
+  if (typeof newMarker === "undefined") {
+    newMarker = new L.marker(e.latlng);
+    newMarker
+      .addTo(mymap)
+      .bindPopup(
+        "<b>Выбрано местоположение</b><br>" + e.latlng.toString().slice(6)
+      )
+      .openPopup();
+  } else {
+    newMarker
+      .setLatLng(e.latlng)
+      .bindPopup(
+        "<b>Выбрано местоположение</b><br>" + e.latlng.toString().slice(6)
+      )
+      .openPopup();
+  }
+  userCoordinates = e.latlng;
+  now();
 }
 
-mymap.on('click', clickEvent);
+mymap.on("click", clickEvent);
 
-function now(){
-// write in document user's coordinates:
-document.getElementById("geoLocationLat").innerHTML = userCoordinates.lat;
-document.getElementById("geoLocationLong").innerHTML = userCoordinates.lng;
+function now() {
+  // write in document user's coordinates:
+  document.getElementById("geoLocationLat").innerHTML = userCoordinates.lat;
+  document.getElementById("geoLocationLong").innerHTML = userCoordinates.lng;
 }
