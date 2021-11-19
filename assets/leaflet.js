@@ -3,7 +3,7 @@ var mymap = L.map("map").setView(
     7 
   );
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: 'Imagery &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
+    attribution: 'Картография &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
     minZoom: 6,
     maxZoom: 14,
     }).addTo(mymap);
