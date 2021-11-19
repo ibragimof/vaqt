@@ -5,10 +5,10 @@ var mymap = L.map("map").setView(
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: 'Картография &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
     minZoom: 6,
-    maxZoom: 14,
+    maxZoom: 16,
     }).addTo(mymap);
   //initialize new map location:
-  mymap.locate({setView: true, maxZoom: 16});
+  mymap.locate({setView: true});
   //initilaize new users cordinates:
   var userCoordinates = new Object();
 
@@ -17,7 +17,7 @@ var mymap = L.map("map").setView(
     var radius = e.accuracy;
 
     L.marker(e.latlng).addTo(mymap)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+        .bindPopup("Вы в радиусе " + radius + " метрах").openPopup();
 
     L.circle(e.latlng, radius).addTo(mymap);
 }
