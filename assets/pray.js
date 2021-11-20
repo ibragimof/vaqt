@@ -1,5 +1,6 @@
 function globalScope() {
-
+    // Fajr and maghrib time scopes (17' degree set):
+    SunCalc.addTime(-16.8, 'fajrStart', 'maghribEnd');
     // Time stamps' initializer:
   date = new Date();
 
@@ -39,60 +40,30 @@ function globalScope() {
   $('#geoLocationLat').html(userCoordinates.lat);
   $('#geoLocationLong').html(userCoordinates.lng);
 
-  SunCalc.addTime(-15, "fajrTime", "ishaTime");
-  SunCalc.addTime(-16, "subhEnd");
+  SunCalc.addTime(-16.5, "subhEnd");
   console.log(day);
-  
-  // Add morning times massive:
-  let morning = day.morningTwilight;
-
+// Fasting time (-18' degree):
   $('#fasting').html(formatTime(day.nightEnd));
-  // add custom time fajr:
-  document.getElementById("fajrTime").innerHTML = JSON.stringify(times);
+// Fajr time starts (-17' degree):
+ $('#fajr').html(formatTime(day.fajrStart));
+  // add recommended time fajr:
+  $('#fajrRecommendation').html(formatTime(day.nauticalDawn));
+  // Sunrise start time (fajr ends)
+  // there is one minute additional time for safety reasons:
+ let sunriseSafetyTime = new Date(day.sunrise);
+ sunriseSafetyTime.setMinutes(day.sunrise.getMinutes() - 1);
+  $('#sunriseStart').html(formatTime(sunriseSafetyTime));
+  
+// Sunrise end time (ishroq salah starts)
+  // there is one minute additional time for safety reasons:
+  let sunriseEndSafetyTime = new Date(day.sunriseEnd);
+  sunriseEndSafetyTime.setMinutes(day.sunriseEnd.getMinutes() + 1);
+   $('#sunriseEnd').html(formatTime(sunriseEndSafetyTime));
+  
+   // Choshgoh time starts (Duhaa salah time)
+  $('#choshgoh').html(formatTime(day.goldenHourEnd));
 
-  // write time for dohr:
-  document.getElementById("dohrTime").innerHTML =
-    times.solarNoon.toLocaleString("en-US") +
-    ":" +
-    times.solarNoon.getMinutes();
-
-  //write for Asr:
-  document.getElementById("asrTime").innerHTML = "Not calculated yet";
-
-  //write for Maghrib:
-  document.getElementById("maghribTime").innerHTML =
-    times.sunset.getHours() + ":" + times.sunset.getMinutes();
-
-  // add custom time fajr:
-  document.getElementById("ishaTime").innerHTML =
-    times.ishaTime.getHours() + ":" + times.ishaTime.getMinutes();
-
-  // Suhur
-  document.getElementById("subhEnd").innerHTML =
-    times.subhEnd.getHours() + ":" + times.subhEnd.getMinutes();
-
-  // Midnight
-  document.getElementById("midnight").innerHTML =
-    times.nadir.getHours() + ":" + times.nadir.getMinutes();
-
-  // sunrise long period
-  document.getElementById("sunriseRestricted").innerHTML =
-    times.sunrise.getHours() +
-    ":" +
-    times.sunrise.getMinutes() +
-    "—" +
-    times.sunriseEnd.getHours() +
-    ":" +
-    times.sunriseEnd.getMinutes();
-
-  //sunrset long period:
-  document.getElementById("sunsetRestricted").innerHTML =
-    times.sunsetStart.getHours() +
-    ":" +
-    times.sunsetStart.getMinutes() +
-    "—" +
-    times.sunset.getHours() +
-    ":" +
-    times.sunset.getMinutes();
+  // Choshgoh time starts (Duhaa salah time)
+  $('#noon').html(formatTime(day.solarNoon));
 
 }
