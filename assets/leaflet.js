@@ -1,4 +1,4 @@
-let mymap = L.map("map").setView([39.65, 66.95], 14);
+let mymap = L.map("map").setView([39.65, 66.95], 7);
 L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
   attribution:
     'Imagery &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
@@ -17,9 +17,9 @@ function onLocationFound(e) {
   L.marker(e.latlng)
     .addTo(mymap)
     .bindPopup(
-      "<b>Ваше текущее местоположение</b><br>(с точностью до &asymp;" +
+      "<b>Ваше местоположение</b><br>(Точность до &asymp; " +
         Math.floor(radius) +
-        " метров от  указанной точки)"
+        " метров)"
     )
     .openPopup();
 

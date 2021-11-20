@@ -1,26 +1,60 @@
 function globalScope() {
-  // write in document user's coordinates:
-  document.getElementById("geoLocationLat").innerHTML = userCoordinates.lat;
-  document.getElementById("geoLocationLong").innerHTML = userCoordinates.lng;
+
+    // Time stamps' initializer:
+  date = new Date();
+
+  // new report initializer:
+  let day = SunCalc.getTimes(date, userCoordinates.lat,
+    userCoordinates.lng);
+    console.log(JSON.stringify(day));
+  // Time (output) formatter:
+  function formatTime(date, postfix) {
+    if (isNaN(date)) {
+      return "&nbsp;&nbsp;n/a&nbsp;&nbsp;";
+    }
+
+    let hours = date.getHours(),
+      minutes = date.getMinutes(),
+      ap;
+
+    if (postfix) {
+      ap = hours < 12 ? "am" : "pm";
+      if (hours == 0) {
+        hours = 12;
+      }
+      if (hours > 12) {
+        hours -= 12;
+      }
+    } else {
+      hours = hours < 10 ? "0" + hours : "" + hours;
+    }
+
+    minutes = minutes < 10 ? "0" + minutes : "" + minutes;
+
+    return hours + ":" + minutes + (postfix ? " " + ap : "");
+  }
+
+  // write in document user's coordinates & date:
+  $('#todayDateIs').html(date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear());
+  $('#geoLocationLat').html(userCoordinates.lat);
+  $('#geoLocationLong').html(userCoordinates.lng);
 
   SunCalc.addTime(-15, "fajrTime", "ishaTime");
   SunCalc.addTime(-16, "subhEnd");
-  let times = SunCalc.getTimes(
-    new Date(),
-    userCoordinates.lat,
-    userCoordinates.lng
-  );
-  console.log(times);
-  // add asr time method:
+  console.log(day);
+  
+  // Add morning times massive:
+  let morning = day.morningTwilight;
 
-  // let times = SunCalc.getTimes(new Date(), 37.717835865297644, 67.60712147320088);
+  $('#fasting').html(formatTime(day.nightEnd));
   // add custom time fajr:
-  document.getElementById("fajrTime").innerHTML =
-    JSON.stringify(times);
+  document.getElementById("fajrTime").innerHTML = JSON.stringify(times);
 
   // write time for dohr:
   document.getElementById("dohrTime").innerHTML =
-    times.solarNoon.getHours() + ":" + times.solarNoon.getMinutes();
+    times.solarNoon.toLocaleString("en-US") +
+    ":" +
+    times.solarNoon.getMinutes();
 
   //write for Asr:
   document.getElementById("asrTime").innerHTML = "Not calculated yet";
@@ -61,8 +95,4 @@ function globalScope() {
     ":" +
     times.sunset.getMinutes();
 
-  document.getElementById("resultDate").innerHTML =
-    new Date().toLocaleDateString();
-
-  let longitude = document.getElementById(geoLocationLat);
 }
