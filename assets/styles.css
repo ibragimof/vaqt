@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@media (min-width: 1400px) {
+    .container {max-width: 1620px;}
+}
+
 * {
     font-family: 'Rubik';
+    
 }
-header h3{
+
+body {
+    background: linear-gradient(0deg, #50b5a0 6%, #fff 25%);
+}
+header h2{
     font-weight: 600;
     color: #50b5a0;
     margin-top: 10px;
@@ -35,7 +44,8 @@ section .region-picker option {
 section div.get_result {
     margin-top: 20px;
     padding: 15px 10px;
-    background-color:oldlace;
+    background: rgba(255, 255, 255, 0.911);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,212,255,0.5) 46%, rgba(80,181,160,1) 0.7);
 }
 section div.get_result>p {
     font-weight: 100;
@@ -47,7 +57,11 @@ footer {
     padding: 5px 2vh 0;
     color: blanchedalmond;
 }
-
+span.description {
+    font-size: .8em;
+    opacity: .6;
+    line-height: 0.8em;
+}
 a {
     
     color:darkslategrey;
@@ -71,7 +85,10 @@ a {
     background-color: #a5f1e2;
     color: rgb(44, 42, 40);
 }
+section.map {
+    margin-top: 5%;
+}
 #map {
-    height: 100%;
-    width: 100%;
+    padding: 20px;
+    margin: 20px;
 }
