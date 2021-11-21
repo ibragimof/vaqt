@@ -17,9 +17,9 @@ function onLocationFound(e) {
   L.marker(e.latlng)
     .addTo(mymap)
     .bindPopup(
-      "<b>Ваше местоположение</b><br>(Точность до &asymp; " +
+      "<b>Харитадаги ўрнингиз</b><br>(Аниқлик &asymp; " +
         Math.floor(radius) +
-        " метров)"
+        " метргача)"
     )
     .openPopup();
 
@@ -31,7 +31,7 @@ mymap.on("locationfound", onLocationFound);
 // To log error:
 function onLocationError(e) {
   alert(
-    `Ошибка. Мы не смогли определить ваше местоположение. Вы можете указать нужное место вручную на карте.\r\n\n ${e.message}`
+    `Хатолик юз берди. Биз сиз турган жойни аниқлай олмадик. Намоз вақтларини билиш учун харитадан ўзингизга керакли жойни белгиланг.\r\n\n ${e.message}`
   );
 }
 
@@ -43,14 +43,14 @@ function clickEvent(e) {
     newMarker
       .addTo(mymap)
       .bindPopup(
-        "<b>Выбрано местоположение</b><br>" + e.latlng.toString().slice(6)
+        "<b>Жой танланди</b><br>" + e.latlng.toString().slice(6)
       )
       .openPopup();
   } else {
     newMarker
       .setLatLng(e.latlng)
       .bindPopup(
-        "<b>Выбрано местоположение</b><br>" + e.latlng.toString().slice(6)
+        "<b>Жой танланди</b><br>" + e.latlng.toString().slice(6)
       )
       .openPopup();
   }
