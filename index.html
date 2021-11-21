@@ -32,28 +32,33 @@
       crossorigin=""
     ></script>
   </head>
-  <link rel="icon" type="image/png" sizes="32x32" href="/resources/graphic/favicon.png">
-    <meta property="og:image" content="https://namoz.uz/resources/graphic/open_graph_protocol.png">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="www.namoz.uz/">
-    <meta property="og:title" content=Namoz>
-    <meta property="og:description" content='Ҳанафий мазҳабига кўра намоз ўқиш вактлари'>
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/resources/graphic/favicon.png"
+  />
+  <meta
+    property="og:image"
+    content="https://namoz.uz/resources/graphic/open_graph_protocol.png"
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="www.namoz.uz/" />
+  <meta property="og:title" content="Namoz" />
+  <meta
+    property="og:description"
+    content="Ҳанафий мазҳабига кўра намоз ўқиш вактлари"
+  />
   <body>
     <header>
-      <h2 class="text-center">Намоз вақтлари</h2>
-      <p class="text-center">
-        Бутун дунё бўйлаб (Ҳанафий мазҳаби бўйича)
-      </p>
+      <h2 class="text-center">Намоз вақтлари</р2>
+      <h6 class="text-center">
+        Бугунги кун учун ( <span id="todayDateIs"></span> )
+      </h6>
     </header>
     <div class="container">
       <div class="row">
-        <section class="col">
-          <h6 class="text-center">Бугун учун ( <span id="todayDateIs"></span> )</h6>
-            <p>
-              Ҳозирги танланган жойнинг координатлари:<br>
-              <code id="geoLocationLat"></code> даража шимолий кенглик |
-              <code id="geoLocationLong"></code> даража шарқий узунлик
-            </p>
+        <section class="col-md-6 col-12">
           <!-- <div class="set_address">
             <div class="region-picker">
               <label for="">Выберите страну:</label>
@@ -90,139 +95,120 @@
             </div>
           </div> -->
           <div class="get_result">
-            <table class="table table-striped table-hover table-borderless">
+            <table class="table  table-hover table-borderless">
               <tbody>
+                
                 <tr>
-                  <td>Рўза учун оғиз ёпиш:<br><span class="description">Саҳарлик вақтининг тугаши</span></td>
+                  <td>
+                    Рўза учун оғиз ёпиш:<br /><span class="description"
+                      >Саҳарлик вақтининг тугаши</span
+                    >
+                  </td>
                   <td id="fasting">Null</td>
+                  </div>
                 </tr>
                 <tr>
-                  <td>Бомдод:<br><span class="description">Намоз вақтининг кириши</span></td>
+                  <td>
+                    Бомдод:<br /><span class="description"
+                      >Намоз вақтининг кириши</span
+                    >
+                  </td>
                   <td id="fajr">Null</td>
                 </tr>
-                <tr>
-                  <td>Бомдод:<br><span class="description">Жамоат намози (тавсия этилади)</span>
-                  
-                    <div class="accordion .accordion-flush">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button
-                            class="accordion-button"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne"
-                            aria-controls="collapseOne"
-                          >
-                            допольнительно:
-                          </button>
-                        </h2>
-                        <div
-                          id="collapseOne"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="headingOne"
-                          data-bs-parent="#accordionExample"
-                        >
-                          <div class="accordion-body">
-                            <table
-                              class="
-                                table
-                                table-dark
-                                table-striped
-                                table-hover
-                                table-borderless
-                              "
-                            >
-                              <tbody>
-                                <tr>
-                                  <td>Saharlik vaqtining tugashi:</td>
-                                  <td id="subhEnd">Time</td>
-                                </tr>
-                                <tr>
-                                  <td>Yarim tun:</td>
-                                  <td id="midnight">Time</td>
-                                </tr>
-                                <tr>
-                                  <td>Kechaning oxirgi uchdan biri:</td>
-                                  <td>not calculated yet</td>
-                                </tr>
-                                <tr>
-                                  <td>Kun uzunligi:</td>
-                                  <td>not calculated yet</td>
-                                </tr>
-                                <tr>
-                                  <td>Tun uzunligi:</td>
-                                  <td>not calculated yet</td>
-                                </tr>
-                                <tr>
-                                  <td>Quyosh chiqishining davomiyligi:</td>
-                                  <td id="sunriseRestricted">Time</td>
-                                </tr>
-                                <tr>
-                                  <td>Qoq tush vaqti:</td>
-                                  <td>Not calculated yet</td>
-                                </tr>
-                                <tr>
-                                  <td>Quyosh botishining davomiyligi:</td>
-                                  <td id="sunsetRestricted">Time</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                    </div></td>
+                <tr class="table-info">
+                  <td>
+                    Бомдод:<br /><span class="description"
+                      >Жамоат намози (тавсия этилади)</span
+                    >
+                  </td>
                   <td id="fajrRecommendation">Null</td>
+                  
                 </tr>
                 <tr>
-                  <td>Қуёш чиқишининг бошланиши:<br><span class="description">Бомдод намози вақтининг тугаши</span></td>
+                  <td>
+                    Қуёш чиқиши:<br /><span class="description"
+                      >Қуёш чиқишининг бошланиши ва тугаш вақти</span
+                    >
+                  </td>
                   <td id="sunriseStart">Null</td>
                 </tr>
-                <tr>
-                  <td>Қуёш чиқишининг тугаши:<br><span class="description">Ишроқ намози (нафл) вақтининг кириши</span></td>
+                <!-- <tr>
+                  <td>
+                    Қуёш чиқишининг тугаши:<br /><span class="description"
+                      >Ишроқ намози (нафл) вақтининг кириши</span
+                    >
+                  </td>
                   <td id="sunriseEnd">Null</td>
-                </tr>
+                </tr> -->
                 <tr>
-                  <td>Зухо намози вақтининг кириши (Чошгоҳ):<br><span class="description">Ишроқ намози (нафл) вақтининг чиқиши</span></td>
+                  <td>
+                    Чошгоҳ:<br /><span
+                      class="description"
+                      >Зухо намози (нафл) учун</span
+                    >
+                  </td>
                   <td id="choshgoh">Null</td>
                 </tr>
                 <tr>
-                  <td>Қиём вақти:<br><span class="description">Қуёш тик юқорига келган вақт (намоз ўқиб бўлмайди)</span></td>
+                  <td>
+                    Қиём вақти:<br /><span class="description"
+                      >Қуёш тик юқорига келган вақт (намоз ўқиб бўлмайди)</span
+                    >
+                  </td>
                   <td id="noon">Null</td>
                 </tr>
-                <tr>
-                  <td>Пешин намози:<br><span class="description">Намоз вақтининг кириши</span></td>
+                <tr class="table-warning">
+                  <td>
+                    Пешин намози:<br /><span class="description"
+                      >Намоз вақтининг кириши</span
+                    >
+                  </td>
                   <td id="dohr">Null</td>
                 </tr>
+                <tr class="table-success">
+                  <td>Аср намози вакти:<br /><span class="description"
+                    >(Шу вақт ичида ўқиш тавсия этилади)</span
+                  ></td>
+                  <td id="asr">Null</td>
+                <!-- </tr>
                 <tr>
-                  <td>Аср намози вакти:</td>
-                  <td id="ishaTime">-- : --</td>
-                </tr>
-                <tr>
-                  <td>Asr end:<br><span class="description">Reccommendation for asr namoz</span></td>
+                  <td>
+                    Asr end:<br /><span class="description"
+                      >Reccommendation for asr namoz</span
+                    >
+                  </td>
                   <td id="asrEnd">Null</td>
-                </tr>
+                </tr> -->
                 <tr>
-                  <td>Қуёш ботишининг бошланиши:<br><span class="description">Намоз ўқиб бўлмайди</span></td>
+                  <td>
+                    Қуёш ботиши:<br /><span class="description"
+                      >Қуёш ботишининг бошланиши ва тугаши</span
+                    >
+                  </td>
                   <td id="sunset">Null</td>
                 </tr>
-                <tr>
-                  <td>Шом намози вақти:<br><span class="description">Қуёш ботишининг тугаши</span></td>
+                <tr class="table-danger">
+                  <td>
+                    Шом намози вақти:<br /><span class="description"
+                      >Қуёш ботишининг тугаши</span
+                    >
+                  </td>
                   <td id="maghrib">Null</td>
                 </tr>
-                <tr>
-                  <td>Хуфтон намози:<br><span class="description">Хуфтон намози вақтининг кириши</span></td>
+                <tr class="table-primary">
+                  <td>
+                    Хуфтон намози:<br /><span class="description"
+                    >Ярим тунгача ўқиш афзал. Ярим тун вақти:</span
+                  >
+                  </td>
                   <td id="night">Null</td>
-                </tr>
-                <tr>
-                  <td>Ярим тун:<br><span class="description">Хуфтон намозини ўқиш учун тавсия қилинган вақтнинг тугаши</span></td>
-                  <td id="nightTime">Null</td>
                 </tr>
               </tbody>
             </table>
             <hr />
             <!-- <div class="accordion .accordion-flush">
               <div class="accordion-item">
-                <h2 class="accordion-header">
+                <h5 class="accordion-header">
                   <button
                     class="accordion-button"
                     type="button"
@@ -232,7 +218,7 @@
                   >
                     допольнительно:
                   </button>
-                </h2>
+                </h5>
                 <div
                   id="collapseOne"
                   class="accordion-collapse collapse"
@@ -290,19 +276,21 @@
             </div> -->
           </div>
         </section>
-        <section class="col map">
-          <p class="text-center">Харитадан керакли жойни танланг.</p>
+        <section class="col-6 map">
+          <H5 class="text-center">Харитадан керакли жойни танланг.</h5>
+          <p class="description">
+            Ҳозирда намоз вақтларини ҳисоблаш учун танланган жойнинг координатлари:<br />
+            <code id="geoLocationLat"></code> даража шимолий кенглик |
+            <code id="geoLocationLong"></code> даража шарқий узунлик
+          </p>
           <div id="map" class="h-75"></div>
-          <script src="./assets/leaflet.js">
-        
-          </script>
+          <script src="./assets/leaflet.js"></script>
         </section>
       </div>
     </div>
     <footer>
       <p class="text-center">
         <a href="https://namoz.uz/">©"Namoz"</a> Работает в тестовом режиме.
-        Полагаться на предоставляемые данные крайне не рекомендуется.
       </p>
     </footer>
 

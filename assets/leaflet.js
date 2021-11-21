@@ -1,9 +1,9 @@
-let mymap = L.map("map").setView([39.65, 66.95], 7);
+let mymap = L.map("map").setView([39.65, 66.95], 8);
 L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
   attribution:
     'Imagery &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
-  minZoom: 6,
-  maxZoom: 16,
+  minZoom: 3,
+  maxZoom: 17,
 }).addTo(mymap);
 //initialize new map location:
 mymap.locate({ setView: true });

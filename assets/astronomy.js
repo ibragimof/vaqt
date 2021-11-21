@@ -114,7 +114,8 @@ SunCalc.addTime = function (angle, riseName, setName) {
     times.push([angle, riseName, setName]);
 };
 
-
+// Fajr and maghrib time scopes (17' degree set):
+SunCalc.addTime(-17, "fajrStart", "maghribEnd");
 // calculations for sun times
 
 var J0 = 0.0009;
