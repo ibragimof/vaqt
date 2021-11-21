@@ -66,4 +66,28 @@ function globalScope() {
   // Choshgoh time starts (Duhaa salah time)
   $('#noon').html(formatTime(day.solarNoon));
 
+  // Sunrise end time (ishroq salah starts)
+  // there is three minutes additional time for safety reasons:
+  let noonSafetyTime = new Date(day.solarNoon);
+  noonSafetyTime.setMinutes(day.solarNoon.getMinutes() + 3);
+   $('#dohr').html(formatTime(noonSafetyTime));
+
+   // Asr time ends:
+  $('#asrEnd').html(formatTime(day.goldenHour));
+
+  // Sunset start time:
+  $('#sunset').html(formatTime(day.sunsetStart));
+
+  // Sunset ends time (maghrib starts)
+  // there is one minutes additional time for safety reasons:
+ let sunsetSafetyTime = new Date(day.sunset);
+ sunsetSafetyTime.setMinutes(day.sunset.getMinutes() + 1);
+  $('#maghrib').html(formatTime(sunsetSafetyTime));
+
+// Night starts time:
+$('#night').html(formatTime(day.nauticalDusk));
+
+// Night nadir time:
+$('#nightTime').html(formatTime(day.nadir));
+  
 }
