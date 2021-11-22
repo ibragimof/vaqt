@@ -5,6 +5,20 @@ L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
   minZoom: 3,
   maxZoom: 17,
 }).addTo(mymap);
+
+// Custom narker icons for map:
+let logoIcon = L.icon({
+  iconUrl: '/assets/logo.png',
+  iconAnchor:   [15, 40], // point of the icon which will correspond to marker's location
+  popupAnchor:  [0, -43] // point from which the popup should open relative to the iconAnchor
+});
+
+let kaabahIcon = L.icon({
+  iconUrl: '/assets/kaaba.png',
+  iconAnchor:   [0, 35], // point of the icon which will correspond to marker's location
+  popupAnchor:  [0, -43] // point from which the popup should open relative to the iconAnchor
+});
+
 //initialize new map location:
 mymap.locate({ setView: true });
 //initilaize new users cordinates:
