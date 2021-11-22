@@ -62,7 +62,7 @@ function onLocationFound(e) {
   globalScope();
 
   // #######################
-  // Block of dirty code
+  // tested. works
   // Draw line between Qibla and this location:
   pathToQibla.push(foundLocation.getLatLng());
   route = polygone(pathToQibla, {
@@ -73,6 +73,8 @@ function onLocationFound(e) {
   to = foundLocation.getLatLng();
   distance = Math.trunc(from.distanceTo(to) / 1000);
   document.getElementById('distance').innerHTML = distance;
+  // #######################
+  // tested. works
 }
 currentMap.on("locationfound", onLocationFound);
 // To log error:
@@ -81,9 +83,10 @@ function onLocationError(e) {
     `Хатолик юз берди. Биз сиз турган жойни аниқлай олмадик. Намоз вақтларини билиш учун харитадан ўзингизга керакли жойни белгиланг.\r\n\n ${e.message}`
   );
 }
-
 currentMap.on("locationerror", onLocationError);
-// marker icon
+
+
+// Onclick (select location):
 function clickEvent(e) {
   if (typeof newMarker === "undefined") {
     newMarker = new L.marker(e.latlng);
@@ -93,6 +96,7 @@ function clickEvent(e) {
         "<b>Жой танланди</b><br>" + e.latlng.toString().slice(6)
       )
       .openPopup();
+      
   } else {
     newMarker
       .setLatLng(e.latlng)
@@ -101,6 +105,15 @@ function clickEvent(e) {
       )
       .openPopup();
   }
+  // ####### tested. works as charm
+  pathToQibla[1] = (newMarker.getLatLng());
+  currentMap.removeLayer(route);
+  route = polygone(pathToQibla, {color: 'red'}).addTo(currentMap);
+  from = qibla.getLatLng();
+  to = newMarker.getLatLng();
+  distance = Math.trunc(from.distanceTo(to) / 1000);
+  document.getElementById('distance').innerHTML = distance;
+
   userCoordinates = e.latlng;
   globalScope();
 }
