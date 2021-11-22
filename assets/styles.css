@@ -21,6 +21,9 @@ body {
   background: linear-gradient(0deg, #50b5a0 4%, #fff 15%);
   height: 100%;
 }
+header {
+  margin-bottom: 28px;
+}
 header h2 {
   font-weight: 600;
   color: #50b5a0;
@@ -81,9 +84,6 @@ a {
   color:lightblue;
   font-weight: 300;
 }
-section.map {
-    margin-top: 35px;
-}
 #map {
   padding: 20px;
   border-radius: 20px;
@@ -96,4 +96,7 @@ tr {
 table {
     line-height: 1em;
     border-spacing: 50px 8px;
+}
+tr.hidden {
+  visibility: hidden;
 }
