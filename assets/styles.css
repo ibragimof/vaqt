@@ -19,7 +19,7 @@
 
 body {
   background: linear-gradient(0deg, #50b5a0 4%, #fff 15%);
-  height: 100vh;
+  height: 100%;
 }
 header h2 {
   font-weight: 600;
@@ -77,9 +77,9 @@ footer {
   line-height: -0.8em;
 }
 a {
-  color: darkslategrey;
+  text-decoration: none;
+  color:lightblue
   font-weight: 300;
-  font-family: "Courier New", Courier, monospace;
 }
 section.map {
     margin-top: 35px;
@@ -87,11 +87,13 @@ section.map {
 #map {
   padding: 20px;
   border-radius: 20px;
+  min-height: 375px;
 }
 tr {
     cursor: pointer;
+    margin-bottom: 10px;
 }
-
 table {
     line-height: 1em;
+    border-spacing: 50px 8px;
 }
