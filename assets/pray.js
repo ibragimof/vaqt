@@ -71,8 +71,7 @@ function globalScope() {
   sunriseEndSafetyTime.setMinutes(day.sunriseEnd.getMinutes() + 1);
   $("#sunriseStart").append('<br>');
   $('<span class="description"> — ' +  formatTime(sunriseEndSafetyTime) + '</span>').appendTo('#sunriseStart');
-  // $("#sunriseEnd").html(formatTime(sunriseEndSafetyTime));
-console.log(day);
+
   // Choshgoh time starts (Duhaa salah time)
   $("#choshgoh").html(formatTime(day.goldenHourEnd));
   $("#choshgoh").append('<br>');
