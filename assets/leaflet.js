@@ -1,7 +1,5 @@
 let currentMap = L.map("map").setView([39.65, 66.95], 8);
 L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-  attribution:
-    'Imagery &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>',
   minZoom: 3,
   maxZoom: 17,
 }).addTo(currentMap);
@@ -82,6 +80,11 @@ function onLocationError(e) {
   alert(
     `Хатолик юз берди. Биз сиз турган жойни аниқлай олмадик. Намоз вақтларини билиш учун харитадан ўзингизга керакли жойни белгиланг.\r\n\n ${e.message}`
   );
+  currentMap = L.map("map").setView([39.65, 66.95], 8);
+  L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+    minZoom: 3,
+    maxZoom: 17,
+    }).addTo(currentMap);
 }
 currentMap.on("locationerror", onLocationError);
 
@@ -107,13 +110,21 @@ function clickEvent(e) {
   }
   // ####### tested. works as charm
   pathToQibla[1] = (newMarker.getLatLng());
+  if(route) {
   currentMap.removeLayer(route);
   route = polygone(pathToQibla, {color: 'red'}).addTo(currentMap);
   from = qibla.getLatLng();
   to = newMarker.getLatLng();
   distance = Math.trunc(from.distanceTo(to) / 1000);
   document.getElementById('distance').innerHTML = distance;
-
+  }
+  else {
+    route = polygone(pathToQibla, {color: 'red'}).addTo(currentMap);
+  from = qibla.getLatLng();
+  to = newMarker.getLatLng();
+  distance = Math.trunc(from.distanceTo(to) / 1000);
+  document.getElementById('distance').innerHTML = distance;
+  }
   userCoordinates = e.latlng;
   globalScope();
 }
