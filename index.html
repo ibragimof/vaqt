@@ -107,7 +107,7 @@
                   <td id="fasting">Null</td>
                   </div>
                 </tr>
-                <tr>
+                <tr  class="table-info">
                   <td>
                     Бомдод:<br /><span class="description"
                       >Намоз вақтининг кириши</span
@@ -115,10 +115,10 @@
                   </td>
                   <td id="fajr">Null</td>
                 </tr>
-                <tr class="table-info">
+                <tr>
                   <td>
-                    Бомдод:<br /><span class="description"
-                      >Жамоат намози (тавсия этилади)</span
+                    Бомдод намози:<br /><span class="description"
+                      >Жамоат намозини шу вақт ичида ўқиш афзал:</span
                     >
                   </td>
                   <td id="fajrRecommendation">Null</td>
@@ -127,7 +127,7 @@
                 <tr>
                   <td>
                     Қуёш чиқиши:<br /><span class="description"
-                      >Қуёш чиқишининг бошланиши ва тугаш вақти</span
+                      >Қуёш чиқишининг бошланиши ва тугаши</span
                     >
                   </td>
                   <td id="sunriseStart">Null</td>
@@ -144,7 +144,7 @@
                   <td>
                     Чошгоҳ:<br /><span
                       class="description"
-                      >Зухо намози (нафл) учун</span
+                      >Зухо намози ўқиш учун тавсия қилинган вақт:</span
                     >
                   </td>
                   <td id="choshgoh">Null</td>
@@ -166,8 +166,8 @@
                   <td id="dohr">Null</td>
                 </tr>
                 <tr class="table-success">
-                  <td>Аср намози вакти:<br /><span class="description"
-                    >(Шу вақт ичида ўқиш тавсия этилади)</span
+                  <td>Аср намози:<br /><span class="description"
+                    >(Шу вақт ичида ўқиш афзал):</span
                   ></td>
                   <td id="asr">Null</td>
                 <!-- </tr>
@@ -189,8 +189,8 @@
                 </tr>
                 <tr class="table-danger">
                   <td>
-                    Шом намози вақти:<br /><span class="description"
-                      >Қуёш ботишининг тугаши</span
+                    Шом намози:<br /><span class="description"
+                      >(Шу вақт ичида ўқиш афзал):</span
                     >
                   </td>
                   <td id="maghrib">Null</td>
@@ -277,11 +277,11 @@
           </div>
         </section>
         <section class="col-md-6 col-12 map">
-          <H5 class="text-center">Харитадан керакли жойни танланг.</h5>
+          <H5 class="text-center">Харитадан жойни танланг.</h5>
           <p class="description">
-            Ҳозирда намоз вақтларини ҳисоблаш учун танланган жойнинг координатлари:<br />
-            <code id="geoLocationLat"></code> даража шимолий кенглик |
-            <code id="geoLocationLong"></code> даража шарқий узунлик
+            Ҳозир ҳисоблаш учун танланган жойнинг координатлари:<br />
+            <code id="geoLocationLat"></code> даража кенглик |
+            <code id="geoLocationLong"></code> даража узунлик
           </p>
           <div id="map" class="h-75"></div>
           <script src="./assets/leaflet.js"></script>
@@ -290,7 +290,7 @@
     </div>
     <footer>
       <p class="text-center">
-        <a href="https://namoz.uz/">©"Namoz"</a> Работает в тестовом режиме.
+        <a href="https://namoz.uz/">©"Namoz"</a> Rights reserved.
       </p>
     </footer>
 
