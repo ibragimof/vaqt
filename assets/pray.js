@@ -49,8 +49,8 @@ function globalScope() {
   $("#todayDateIs").html(
     date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear()
   );
-  $("#geoLocationLat").html(userCoordinates.lat);
-  $("#geoLocationLong").html(userCoordinates.lng);
+  $("#geoLocationLat").html((userCoordinates.lat).toFixed(4));
+  $("#geoLocationLong").html((userCoordinates.lng).toFixed(4));
   // Fasting time (-18' degree):
   $("#fasting").html(formatTime(day.nightEnd));
   // Fajr time starts (-17' degree):
