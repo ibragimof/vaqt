@@ -35,10 +35,10 @@
       crossorigin=""
     />
     <script
-      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-      crossorigin=""
-    ></script>
+src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""
+></script>
   </head>
   <link
     rel="icon"
@@ -58,22 +58,8 @@
     content="Ҳанафий мазҳабига кўра намоз ўқиш вактлари"
   />
   <body>
-    <header>
-      <script>
-        if (!localStorage['newUser']) {
-        localStorage['newUser'] = 'yes';
-        showDisclaimer();
-        }
-      </script>
-      <script>
 
-        $(document).ready(function() {
-         function showDisclaimer (){
-            $('#staticBackdrop').modal('show');
-          }
-        });
-      
-      </script>
+    <header>
       <h2 class="text-center">Намоз вақтлари</р2>
       <h6 class="text-center">
         Бугун учун ( <span id="todayDateIs"></span> )
@@ -120,15 +106,6 @@
           <div class="get_result">
             <table class="table  table-hover table-borderless">
               <tbody>
-                <tr class="hidden">
-                  <td>
-                    Рўза учун оғиз ёпиш:<br /><span class="description"
-                      >Саҳарлик вақтининг тугаши</span
-                    >
-                  </td>
-                  <td id="fasting">Null</td>
-                  </div>
-                </tr>
                 <tr  class="table-info">
                   <td>
                     Бомдод намози:<br /><span class="description"
@@ -139,7 +116,7 @@
                 </tr>
                 <tr>
                   <td>
-                    Бомдод намози (жамоат)<br /><span class="description"
+                    Бомдод намози — жамоат<br /><span class="description"
                       >(Шу вақт ичида ўқиш афзал)</span
                     >
                   </td>
@@ -147,7 +124,7 @@
                   
                 </tr>
                 <tr>
-                  <td>
+                  <td> 
                     Қуёш чиқиши:<br /><span class="description"
                       >Чиқишининг бошланиши ва тугаши</span
                     >
@@ -156,15 +133,15 @@
                 </tr>
                 <tr>
                   <td>
-                    Чошгоҳ (Зухо намози):<br /><span
+                    Зуҳо намози:<br /><span
                       class="description"
-                      >Тавсия қилинган вақт:</span
+                      >(Тавсия қилинган вақт)</span
                     >
                   </td>
                   <td id="choshgoh">Null</td>
                 </tr>
                 <tr>
-                  <td>
+                  <td> 
                     Қиём вақти:<br /><span class="description"
                       >Қуёш тик юқорига келган вақт</span
                     >
@@ -187,8 +164,8 @@
                 <tr>
                   <td>
                     Қуёш ботиши:<br /><span class="description"
-                      >Ботишининг бошланиши ва тугаши</span
-                    >
+                      >Ботишининг бошланиши ва тугаши
+                      </span>
                   </td>
                   <td id="sunset">Null</td>
                 </tr>
@@ -223,37 +200,24 @@
             Ҳисобланаётган жой координатлари:
             <code id="geoLocationLat">Null</code> ,
             <code id="geoLocationLong">Null</code>.
-            Бу ердан Каъбагача масофа: <b><span id="distance">Null</span></b> километр.<br><b>Қибла йўналиши қизил чизиқ билан кўрсатилган.<b></b>
+            Бу ердан Каъбагача масофа: <b><span id="distance">Null</span></b> километр.<br>
           </p>
           <div id="map" class="h-75"></div>
+          <hr>
+          <p class="description">Қибла йўналиши қизил чизиқ билан кўрсатилган.</p>
           <script src="./assets/leaflet.js"></script>
         </section>
       </div>
     </div>
     <footer>
       <p class="text-center">
-        <a href="https://namoz.uz/">©"Namoz.uz"</a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          Launch static backdrop modal
-        </button>
+        Ўзбекистон Республикаси Вазирлар Маҳкамаси ҳузуридаги Дин ишлари бўйича қўмитанинг 11.10.2021-санадаги 03-07/6205-сонли хулосаси асосида тайёрланди.
+        <br><a href="https://namoz.uz/">©"Namoz.uz"</a>
         
       </p>
     </footer>
-    <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-        <p>Ҳозир сиздан жойлашган жойингизни автоматик аниқлаш учун рухсат сўралади.<br>Харита координатлари намоз вақтларини ҳисоблаш учун керак.<br><br>Агар ҳозирги ўрнингизни автоматик аниқлай олмасак, харитадан фойдаланиб керакли жойни ўзингиз танланг.<br></p>
-        <button type="button" class="btn btn-info" data-bs-dismiss="modal">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
-            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-          </svg> Тушундим
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-    
+
+
     <script src="./assets/pray.js"></script>
   </body>
 </html>

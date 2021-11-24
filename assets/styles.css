@@ -64,7 +64,7 @@ section div.get_result {
     rgba(80, 181, 160, 1) 0.7
   );
 }
-section div.get_result > p {
+section > p {
   font-weight: 100;
   font-size: 0.9em;
 }

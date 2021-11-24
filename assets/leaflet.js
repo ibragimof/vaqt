@@ -1,9 +1,10 @@
-let currentMap = L.map("map").setView([39.65, 66.95], 8);
+  let currentMap = L.map("map").setView([39.65, 66.95], 4);
 L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-  minZoom: 3,
+  minZoom: 2,
   maxZoom: 17,
 }).addTo(currentMap);
-
+  //initialize new map location:
+  currentMap.locate({ setView: true });
 // Custom narker icons for map:
 let logoIcon = L.icon({
   iconUrl: '/assets/logo.png',
@@ -19,8 +20,7 @@ let kaabahIcon = L.icon({
 
 //initialize array for polygonal draw and getting distance:
 let markerCoordinates = Array();
-//initialize new map location:
-currentMap.locate({ setView: true });
+
 //initilaize new users cordinates:
 let userCoordinates = new Object();
 
@@ -75,16 +75,12 @@ function onLocationFound(e) {
   // tested. works
 }
 currentMap.on("locationfound", onLocationFound);
+
 // To log error:
 function onLocationError(e) {
   alert(
     `Хатолик юз берди. Биз сиз турган жойни аниқлай олмадик. Намоз вақтларини билиш учун харитадан ўзингизга керакли жойни белгиланг.\r\n\n ${e.message}`
   );
-  currentMap = L.map("map").setView([39.65, 66.95], 8);
-  L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-    minZoom: 3,
-    maxZoom: 17,
-    }).addTo(currentMap);
 }
 currentMap.on("locationerror", onLocationError);
 
@@ -130,5 +126,4 @@ function clickEvent(e) {
 }
 
 currentMap.on("click", clickEvent);
-
 // in another file, all parameters should be used inside of globalScope() function!!!
