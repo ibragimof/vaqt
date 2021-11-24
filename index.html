@@ -59,6 +59,21 @@
   />
   <body>
     <header>
+      <script>
+        if (!localStorage['newUser']) {
+        localStorage['newUser'] = 'yes';
+        showDisclaimer();
+        }
+      </script>
+      <script>
+
+        $(document).ready(function() {
+         function showDisclaimer (){
+            $('#staticBackdrop').modal('show');
+          }
+        });
+      
+      </script>
       <h2 class="text-center">Намоз вақтлари</р2>
       <h6 class="text-center">
         Бугун учун ( <span id="todayDateIs"></span> )
@@ -202,9 +217,12 @@
         <section class="col-md-6 col-12 map">
           <H5 class="text-center">Харитадан жойни танланг.</h5>
           <p class="description">
-            Ҳисобланаётган жойнинг координатлари: 
-            "<code id="geoLocationLat">Null</code> ,
-            <code id="geoLocationLong">Null</code>".
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+            </svg>
+            Ҳисобланаётган жой координатлари:
+            <code id="geoLocationLat">Null</code> ,
+            <code id="geoLocationLong">Null</code>.
             Бу ердан Каъбагача масофа: <b><span id="distance">Null</span></b> километр.<br><b>Қибла йўналиши қизил чизиқ билан кўрсатилган.<b></b>
           </p>
           <div id="map" class="h-75"></div>
@@ -214,10 +232,28 @@
     </div>
     <footer>
       <p class="text-center">
-        <a href="https://namoz.uz/">©"Namoz.uz"</a>
+        <a href="https://namoz.uz/">©"Namoz.uz"</a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Launch static backdrop modal
+        </button>
+        
       </p>
     </footer>
-
+    <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Ҳозир сиздан жойлашган жойингизни автоматик аниқлаш учун рухсат сўралади.<br>Харита координатлари намоз вақтларини ҳисоблаш учун керак.<br><br>Агар ҳозирги ўрнингизни автоматик аниқлай олмасак, харитадан фойдаланиб керакли жойни ўзингиз танланг.<br></p>
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+          </svg> Тушундим
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+    
     <script src="./assets/pray.js"></script>
   </body>
 </html>
