@@ -58,7 +58,7 @@ function globalScope() {
   // add recommended time fajr:
   $("#fajrRecommendation").html(formatTime(day.nauticalDawn));
   $("#fajrRecommendation").append('<br>');
-  $('<span class="description"> — ' +  formatTime(day.dawn) + '</span>').appendTo('#fajrRecommendation');
+  $('<span class="description"> - ' +  formatTime(day.dawn) + '</span>').appendTo('#fajrRecommendation');
   // Sunrise start time (fajr ends)
   // there is one minute additional time for safety reasons:
   let sunriseSafetyTime = new Date(day.sunrise);
@@ -70,12 +70,12 @@ function globalScope() {
   let sunriseEndSafetyTime = new Date(day.sunriseEnd);
   sunriseEndSafetyTime.setMinutes(day.sunriseEnd.getMinutes() + 1);
   $("#sunriseStart").append('<br>');
-  $('<span class="description"> — ' +  formatTime(sunriseEndSafetyTime) + '</span>').appendTo('#sunriseStart');
+  $('<span class="description"> - ' +  formatTime(sunriseEndSafetyTime) + '</span>').appendTo('#sunriseStart');
 
   // Choshgoh time starts (Duhaa salah time)
   $("#choshgoh").html(formatTime(day.goldenHourEnd));
   $("#choshgoh").append('<br>');
-  $('<span class="description"> — ' +  formatTime(day.doNotUse) + '</span>').appendTo('#choshgoh');
+  $('<span class="description"> - ' +  formatTime(day.doNotUse) + '</span>').appendTo('#choshgoh');
   // Choshgoh time starts (Duhaa salah time)
   $("#noon").html(formatTime(day.solarNoon));
 
@@ -88,13 +88,13 @@ function globalScope() {
   // Asr time ends:
   $("#asr").html(formatTime(day.asrHanafiy));
   $("#asr").append('<br>');
-  $('<span class="description"> — ' +  formatTime(day.goldenHour) + '</span>').appendTo('#asr');
+  $('<span class="description"> - ' +  formatTime(day.goldenHour) + '</span>').appendTo('#asr');
   
   // Sunset start time:
   $("#sunset").html(formatTime(day.sunsetStart));
   
   $("#sunset").append('<br>');
-  $('<span class="description"> — ' +  formatTime(day.sunset) + '</span>').appendTo('#sunset');
+  $('<span class="description"> - ' +  formatTime(day.sunset) + '</span>').appendTo('#sunset');
 
   // Maghrib time:
   // Sunset ends time (maghrib starts)
@@ -103,10 +103,10 @@ function globalScope() {
   sunsetSafetyTime.setMinutes(day.sunset.getMinutes() + 1);
   $("#maghrib").html(formatTime(sunsetSafetyTime));
   $("#maghrib").append('<br>');
-  $('<span class="description"> — ' +  formatTime(day.dusk) + '</span>').appendTo('#maghrib');
+  $('<span class="description"> - ' +  formatTime(day.dusk) + '</span>').appendTo('#maghrib');
   // Night starts time:
   $("#night").html(formatTime(day.night));
   $("#night").append('<br>');
-  $('<span class="description"> — ' +  formatTime(day.nadir) + '</span>').appendTo('#night');
+  $('<span class="description"> - ' +  formatTime(day.nadir) + '</span>').appendTo('#night');
   // Night nadir time:
 }
