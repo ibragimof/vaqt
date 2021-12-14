@@ -113,7 +113,7 @@ crossorigin=""
                       >Намоз вақтининг кириши. Рўза учун оғиз ёпиш вақти.</span
                     >
                   </td>
-                  <td id="fajr">Null</td>
+                  <td id="fajr">--:--</td>
                 </tr>
                 <tr>
                   <td>
@@ -121,7 +121,7 @@ crossorigin=""
                       >(Шу вақт ичида ўқиш афзал)</span
                     >
                   </td>
-                  <td id="fajrRecommendation">Null</td>
+                  <td id="fajrRecommendation">--:--</td>
                   
                 </tr>
                 <tr>
@@ -130,7 +130,7 @@ crossorigin=""
                       >Чиқишининг бошланиши ва тугаши</span
                     >
                   </td>
-                  <td id="sunriseStart">Null</td>
+                  <td id="sunriseStart">--:--</td>
                 </tr>
                 <tr>
                   <td>
@@ -139,7 +139,7 @@ crossorigin=""
                       >(Тавсия қилинган вақт)</span
                     >
                   </td>
-                  <td id="choshgoh">Null</td>
+                  <td id="choshgoh">--:--</td>
                 </tr>
                 <tr>
                   <td> 
@@ -147,7 +147,7 @@ crossorigin=""
                       >Қуёш тик юқорига келган вақт</span
                     >
                   </td>
-                  <td id="noon">Null</td>
+                  <td id="noon">--:--</td>
                 </tr>
                 <tr class="table-warning">
                   <td>
@@ -155,20 +155,20 @@ crossorigin=""
                       >Намоз вақтининг кириши</span
                     >
                   </td>
-                  <td id="dohr">Null</td>
+                  <td id="dohr">--:--</td>
                 </tr>
                 <tr class="table-success">
                   <td>Аср намози:<br /><span class="description"
                     >(Шу вақт ичида ўқиш афзал)</span
                   ></td>
-                  <td id="asr">Null</td>
+                  <td id="asr">--:--</td>
                 <tr>
                   <td>
                     Қуёш ботиши:<br /><span class="description"
                       >Ботишининг бошланиши ва тугаши
                       </span>
                   </td>
-                  <td id="sunset">Null</td>
+                  <td id="sunset">--:--</td>
                 </tr>
                 <tr class="table-danger">
                   <td>
@@ -176,7 +176,7 @@ crossorigin=""
                       >(Шу вақт ичида ўқиш афзал)</span
                     >
                   </td>
-                  <td id="maghrib">Null</td>
+                  <td id="maghrib">--:--</td>
                 </tr>
                 <tr class="table-primary">
                   <td>
@@ -184,7 +184,7 @@ crossorigin=""
                     >Ярим тунгача ўқиш афзал. Ярим тун:</span
                   >
                   </td>
-                  <td id="night">Null</td>
+                  <td id="night">--:--</td>
                 </tr>
               </tbody>
             </table>
@@ -195,17 +195,17 @@ crossorigin=""
         <section class="col-md-6 col-12 map">
           <H5 class="text-center">Харитадан жойни танланг.</h5>
           <p class="description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            
+            Ҳисобланаётган жой: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
               <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-            </svg>
-            Ҳисобланаётган жой координатлари:
+            </svg> 
             <code id="geoLocationLat">Null</code> ,
             <code id="geoLocationLong">Null</code>.
-            Бу ердан Каъбагача масофа: <b><span id="distance">Null</span></b> километр.<br>
+            Бу ердан Каъбагача масофа: <b><span id="distance">Null</span></b> километр. Қибла йўналиши қизил чизиқ билан кўрсатилган.<br>
           </p>
           <div id="map" class="h-75"></div>
           <hr>
-          <p class="description">Қибла йўналиши қизил чизиқ билан кўрсатилган. Ер шар шаклида бўлгани учун, текис харитадаги қибла чизиғи ёйсимон шаклда кўриниши мумкин. Шундай ҳолда қибла қизил чизиқ йўналиши томонида бўлади (хаёлан Каъба томонга тортилган <a href="https://en.wikipedia.org/wiki/Spherical_law_of_cosines" target="_blank" title='Wikipedia'>тўғри чизиқ томонида эмас</a>).</p>
+          <p class="description">Ер шар шаклида бўлгани учун, текис харитадаги қибла чизиғи ёйсимон шаклда кўриниши мумкин. Шундай ҳолда қибла қизил чизиқ йўналиши томонида бўлади (хаёлан Каъба томонга тортилган <a href="https://en.wikipedia.org/wiki/Spherical_law_of_cosines" target="_blank" title='Wikipedia'>тўғри чизиқ томонида эмас</a>).</p>
           <script src="./assets/leaflet.min.js"></script>
         </section>
       </div>
