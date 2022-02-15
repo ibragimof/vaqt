@@ -47,7 +47,7 @@ function globalScope() {
 
   // write in document user's coordinates & date:
   $("#todayDateIs").html(
-    date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear()
+    date.getDate() + "/" + date.getMonth()+1 + "/" + date.getFullYear()
   );
   $("#geoLocationLat").html((userCoordinates.lat).toFixed(4));
   $("#geoLocationLong").html((userCoordinates.lng).toFixed(4));
