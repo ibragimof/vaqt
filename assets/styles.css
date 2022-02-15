@@ -21,9 +21,6 @@ body {
   background: linear-gradient(0deg, #50b5a0 4%, #fff 15%);
   height: 100%;
 }
-header {
-  margin-bottom: 28px;
-}
 header h2 {
   font-weight: 600;
   color: #50b5a0;
