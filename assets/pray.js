@@ -47,7 +47,7 @@ function globalScope() {
   const monthList = ["Январ","Феврал","Март","Апрел","Май","Ийюн","Ийюл","Август","Сентябр","Октябр","Ноябр","Декабр"];
   // write in document user's coordinates & date:
   $("#todayDateIs").html(
-    date.getDate() + "/" + monthList[date.getMonth()] + "/" + date.getFullYear()
+    date.getDate() + "-" + monthList[date.getMonth()] + ", " + date.getFullYear()
   );
   $("#geoLocationLat").html((userCoordinates.lat).toFixed(4));
   $("#geoLocationLong").html((userCoordinates.lng).toFixed(4));
