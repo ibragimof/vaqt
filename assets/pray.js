@@ -44,7 +44,7 @@ function globalScope() {
 
     return hours + ":" + minutes + (postfix ? " " + ap : "");
   }
-  const monthList = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const monthList = ["Январ","Феврал","Март","Апрел","Май","Ийюн","Ийюл","Август","Сентябр","Октябр","Ноябр","Декабр"];
   // write in document user's coordinates & date:
   $("#todayDateIs").html(
     date.getDate() + "/" + monthList[date.getMonth()] + "/" + date.getFullYear()
