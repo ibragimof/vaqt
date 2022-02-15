@@ -45,10 +45,9 @@ function globalScope() {
     return hours + ":" + minutes + (postfix ? " " + ap : "");
   }
   const monthList = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  const documentWriteMonth = new Date();
   // write in document user's coordinates & date:
   $("#todayDateIs").html(
-    date.getDate() + "/" + monthList[documentWriteMonth.getMonth()] + "/" + date.getFullYear()
+    date.getDate() + "/" + monthList[date.getMonth()] + "/" + date.getFullYear()
   );
   $("#geoLocationLat").html((userCoordinates.lat).toFixed(4));
   $("#geoLocationLong").html((userCoordinates.lng).toFixed(4));
