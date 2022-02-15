@@ -44,10 +44,11 @@ function globalScope() {
 
     return hours + ":" + minutes + (postfix ? " " + ap : "");
   }
-
+  const monthList = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const documentWriteMonth = new Date();
   // write in document user's coordinates & date:
   $("#todayDateIs").html(
-    date.getDate() + "/" + parseInt(date.getMonth())+Number(1) + "/" + date.getFullYear()
+    date.getDate() + "/" + monthList[dicumentWriteMonth.getMonth()] + "/" + date.getFullYear()
   );
   $("#geoLocationLat").html((userCoordinates.lat).toFixed(4));
   $("#geoLocationLong").html((userCoordinates.lng).toFixed(4));
