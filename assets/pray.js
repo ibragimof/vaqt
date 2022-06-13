@@ -79,7 +79,7 @@ function globalScope() {
   // Choshgoh time starts (Duhaa salah time)
   $("#noon").html(formatTime(day.solarNoon));
 
-  // Sunrise end time (ishroq salah starts)
+  // Dohr time
   // there is three minutes additional time for safety reasons:
   let noonSafetyTime = new Date(day.solarNoon);
   noonSafetyTime.setMinutes(day.solarNoon.getMinutes() + 3);
