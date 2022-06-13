@@ -105,7 +105,7 @@ function globalScope() {
   $("#maghrib").append('<br>');
   $('<span class="description"> - ' +  formatTime(day.dusk) + '</span>').appendTo('#maghrib');
   // Night starts time:
-  $("#night").html(formatTime(day.night));
+  $("#night").html(formatTime(day.maghribEnd));
   $("#night").append('<br>');
   $('<span class="description"> - ' +  formatTime(day.nadir) + '</span>').appendTo('#night');
   // Night nadir time:
