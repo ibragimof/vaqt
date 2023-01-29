@@ -70,41 +70,6 @@ crossorigin=""
     <div class="container">
       <div class="row">
         <section class="col-md-6 col-12">
-          <!-- <div class="set_address">
-            <div class="region-picker">
-              <label for="">Выберите страну:</label>
-              <select
-                type="text"
-                name="Country"
-                id="Country"
-                class="form-control"
-              >
-                <option value="">Не выбрано</option>
-              </select>
-            </div>
-            <div class="region-picker">
-              <label for="">Выберите область</label>
-              <select
-                type="text"
-                name="district"
-                id="district"
-                class="form-control"
-              >
-                <option value="">--Страна не выбранa--</option>
-              </select>
-            </div>
-            <div class="region-picker">
-              <label for="">Город или Район:</label>
-              <select
-                type="text"
-                name="subdistrict"
-                id="subdistrict"
-                class="form-control"
-              >
-                <option value="">--Область не выбрана--</option>
-              </select>
-            </div>
-          </div> -->
           <div class="get_result">
             <table class="table  table-hover table-borderless">
               <tbody>
@@ -133,15 +98,6 @@ crossorigin=""
                   </td>
                   <td id="sunriseStart">--:--</td>
                 </tr>
-                <!-- <tr>
-                  <td>
-                    Зуҳо намози:<br /><span
-                      class="description"
-                      >(Тавсия қилинган вақт)</span
-                    >
-                  </td>
-                  <td id="choshgoh">--:--</td>
-                </tr> -->
                 <tr>
                   <td> 
                     Қиём вақти:<br /><span class="description"
@@ -190,11 +146,11 @@ crossorigin=""
               </tbody>
             </table>
             <hr />
-            <p class="description">Ҳисоблаш сиздаги жиҳознинг вақти билан кўрсатилган.</p>
+            <p class="description">Сиздаги жиҳознинг вақти билан кўрсатилган.</p>
           </div>
         </section>
         <section class="col-md-6 col-12 map">
-          <H5 class="text-center">Харитадан жойни танланг.</h5>
+          <H5 class="text-center">Харитадан жойни танланг:</h5>
           <p class="description">
             
             Ҳисобланаётган жой: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
@@ -202,7 +158,7 @@ crossorigin=""
             </svg> 
             <code id="geoLocationLat">Null</code> ,
             <code id="geoLocationLong">Null</code>.
-            Каъбагача масофа: <b><span id="distance">Null</span></b> километр. Қибла йўналиши қизил чизиқ билан кўрсатилган.
+            Каъбагача <b><span id="distance">Null</span></b> км. Қибла йўналиши қизил чизиқда кўрсатилган.
           </p>
           <div id="map" class="h-75"></div>
           <hr>
